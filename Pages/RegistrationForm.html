@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registeration Form </title>
+    <link rel="stylesheet" href="RegisterationForm.css">
+    <style></style>
+</head>
+<body>
+    
+    <section class="form">
+        
+        <form id="registerForm" onsubmit="registerUser(); return false;">
+            <div>
+                <label for="one">First Name : </label><br>
+            <input class="field" id="one" type="text" name="firstName" placeholder="Enter Your First Name" pattern="[A-Za-z]+" title="Please enter letters only" required><br>
+            </div>
+            <br>
+            <div>
+                <label for="two">Last Name :</label><br>
+            <input class="field" type="text" name="lastName" id="two" placeholder="Enter Your Last Name" pattern="[A-Za-z]+" title="Please enter letters only"  required><br>
+            </div>
+            <br>
+            <div>
+                <label for="three">Email :</label><br>
+            <input class="field" type="email" name="email" id="three" placeholder="Enter Your Email" required><br>
+            </div>
+            <br>
+            <div>
+                <label for="four">Password :</label><br>
+            <input class="field" type="password" id ="four"name="password" placeholder="Enter Your Password" minlength="8" required><br>
+            </div>
+            <br>
+            <div>
+                <label for="five">Re-enter Password :</label><br>
+            <input class="field" type="password" id="five" name="rePassword" placeholder="Re-enter Password" minlength="8" required><br>
+            </div>
+            
+            <br> <br><br>
+            <button type="submit">Register</button>
+        </form>
+    </section>
+</body>
+</html>
