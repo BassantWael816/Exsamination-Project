@@ -1,0 +1,141 @@
+body{
+    background: linear-gradient(to bottom right, #dbe1f0, #9ba9cf, #6e83b7);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+}
+.StarImg{
+    width: 500px;
+    margin-left: 67px;
+}
+
+.container{
+    width: 480px;
+    height: 420px;
+    margin: 150px auto;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 5px 5px 15px rgba(22, 50, 153, 0.4);
+    background-color: #e8ebf5;
+}
+.container h1{
+    text-align: center;
+    padding-top: 55px;
+    color: #152C76;
+    margin-bottom: 30px;
+}
+
+.container .login{
+    width: 40px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 18px;
+}
+
+.container .inputContainer{
+    position: relative;
+    width: 350px;
+    margin-bottom: 15px;
+
+}
+
+input::placeholder {
+    color: #999;
+}
+
+.inputContainer input:focus ~ .email,
+.inputContainer input:focus ~ .password {
+    color: #152C76;
+}
+
+.container .email{
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    bottom: 32px;
+    color: black;
+}
+
+.container .password{
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    bottom: 33px;
+    color: black;
+}
+
+.inputContainer:hover .email,
+.inputContainer:hover .password{
+    color:#152C76;
+}
+
+form {
+    width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input{
+    height: 18px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    outline: none;
+    width: 329px;
+    margin-left: -8px;
+    padding-left: 35px;
+}
+
+input:hover + .line,
+input:hover + .line1{
+    background-color: #152C76;
+}
+
+.line,.line1{
+    height: 1px;
+    background-color: rgb(221, 221, 221);
+    width: 374px;
+    position: absolute;
+    margin-left: -8px;
+}
+.line{
+    top: 38px;
+}
+.line1{
+    top: 37px;
+}
+
+button{
+    padding: 8px;
+    background-color: #152C76;
+    color: white;
+    width: 330px;
+    border-radius: 5px;
+    height: 42px;
+    margin-top: -11px;
+    margin-bottom: 10px;
+    border: none;
+}
+
+.signningUp{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #152C76;
+    font-weight: 500;
+    transition: 0.3s ease;
+    margin-top: 10px;
+    font-family:'Poppins', sans-serif;
+}
+
+.signningUp:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+    
