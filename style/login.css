@@ -35,7 +35,7 @@ body{
 .container .inputContainer{
     position: relative;
     width: 350px;
-    margin-bottom: 15px;
+    margin-bottom: -32px;
 
 }
 
@@ -52,7 +52,7 @@ input::placeholder {
     width: 15px;
     height: 15px;
     position: absolute;
-    bottom: 32px;
+    bottom: 72px;
     color: black;
 }
 
@@ -60,7 +60,7 @@ input::placeholder {
     width: 15px;
     height: 15px;
     position: absolute;
-    bottom: 33px;
+    bottom: 73px;
     color: black;
 }
 
@@ -101,22 +101,30 @@ input:hover + .line1{
     margin-left: -8px;
 }
 .line{
-    top: 38px;
+    top: 39px;
 }
 .line1{
     top: 37px;
 }
 
-button{
+button {
     padding: 8px;
-    background-color: #152C76;
+    background: linear-gradient(to bottom, #162d7a, #152C76);
     color: white;
+    font-size: 16px;
+    text-align: center;
     width: 330px;
     border-radius: 5px;
     height: 42px;
     margin-top: -11px;
     margin-bottom: 10px;
     border: none;
+    box-shadow: 0 4px 8px rgba(22, 50, 153, 0.4);
+    transition: 0.2s;
+}
+
+button:hover {
+    background: linear-gradient(to bottom, #1b3692, #152C76);
 }
 
 .signningUp{
@@ -134,8 +142,9 @@ button{
     text-decoration: underline;
 }
 
-
-
-
-
-    
+.validation-message {
+    color: red;
+    font-size: 11px;
+    margin: -17px 0px 37px 0;
+    min-height: 20px;
+}

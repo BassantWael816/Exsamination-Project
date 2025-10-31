@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Exsamination Website</title>
     <!-- Font Awesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link rel="stylesheet" href="/style/login.css">
@@ -13,26 +13,31 @@
     <div class="container">
         <img src="/Images/login-removebg-preview.png" class="login" alt="">
         <h1>Login</h1>
-        <form action="" method="GET">
+        <form action="" method="GET" onsubmit="return validateForm(event)">
             <div class="inputContainer">
                 <i class="fa-solid fa-envelope email"></i>
-                <input type="text" placeholder="enter your email">
+                <input type="text" placeholder="enter your email" id="email" name="email" oninput="validateInput('email')">
                 <div class="line"></div>
+                <div id="EmailMsg" class="validation-message"></div>
             </div>
+
             <br>
 
             <div class="inputContainer">
                 <i class="fa-solid fa-lock password"></i>
-                <input type="password" placeholder="password">
+                <input type="password" placeholder="password" id="password" name="password" oninput="validateInput('password')">
                 <div class="line1"></div>
+                <div id="passwordMsg" class="validation-message"></div>
             </div>
 
             <br>
 
-            <button type="submit">Submit</button>
+            <button type="submit">Login</button>
             <a href="#" class="signningUp">Or Sign Up?</a>
         </form>
         
     </div>
+
+    <script src="/JS/login.js"></script>
 </body>
 </html>
