@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exsam Page</title>
+    <link rel="stylesheet" href="/style/exsam.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="exsam-container">
+        <div id="exam-header">
+            <span id="start-text">Programing Tests</span>
+            <div id="progress">
+                <div id="progress-fill"></div>
+            </div>
+            
+            <div id="timer">
+                <i class="fa-regular fa-clock icon"></i> 
+                <span id="time-text">05:00</span>
+            </div>
+            
+        </div>
+        
+        <div id="questions">
+            <div id="question-text">
+                
+            </div>
+            <div id="answers">
+                
+            </div>
+        </div>
+        
+        <div id="buttons-row">
+            <div id="prev">
+                <i class="fa-solid fa-arrow-left"></i>
+                <button id="prev">Previous</button>
+            </div>
+
+            <div id="next">
+                <i class="fa-solid fa-arrow-right"></i>
+                <button id="next">Next</button>
+            </div>
+
+            <div id="mark">
+                <i class="fa-solid fa-bookmark"></i>
+                <button id="mark">Mark</button>
+            </div>
+        </div>
+        
+        <button id="submit">Finish</button>
+        
+        <div id="mark-list">
+            <h3>Marked Questions</h3>
+        </div>
+    </div>
+    
+    <script src="/JS/exsam.js"></script>
+</body>
+</html>
