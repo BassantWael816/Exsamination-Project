@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exsamination Website</title>
+    <title>Login To Exsam
+
+    </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link rel="stylesheet" href="/style/login.css">
 </head>
@@ -12,6 +14,8 @@
     <div class="container">
         <img src="/Images/login-removebg-preview.png" class="login" alt="">
         <h1>Login</h1>
+        <div id="error-message"></div>
+
         <form action="/Pages/exsam.html" method="GET" onsubmit="return validateForm(event)">
             <div class="inputContainer">
                 <i class="fa-solid fa-envelope email"></i>
@@ -19,20 +23,23 @@
                 <div class="line"></div>
                 <div id="EmailMsg" class="validation-message"></div>
             </div>
-
+            
             <br>
-
+            
             <div class="inputContainer">
                 <i class="fa-solid fa-lock password"></i>
                 <input type="password" placeholder="password" id="password" name="password" oninput="validateInput('password')">
                 <div class="line1"></div>
                 <div id="passwordMsg" class="validation-message"></div>
             </div>
-
+            
             <br>
-
+            
             <button type="submit">Login</button>
-            <a href="#" class="signningUp">Or Sign Up?</a>
+            <div class="signup-container">
+                <span>Do you have an account?</span>
+                <a href="#" class="signningUp">Sign Up</a>
+            </div>
         </form>
         
     </div>

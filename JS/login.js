@@ -1,59 +1,60 @@
 function validateForm(e){
-    //Email
+    var errorMsg = document.getElementById("error-message");
+    errorMsg.style.display = "none";
+
+    // Email
     var email = document.getElementById("email").value;
     var EmailMsg = document.getElementById("EmailMsg");
-    
+
     if(email === ""){
         e.preventDefault();
-        EmailMsg.textContent = "This feild is requird";
+        EmailMsg.textContent = "This field is required";
         return false;
     } else if (!email.includes('@') || !email.includes('.')){
-        e.preventDefault()
-        EmailMsg.textContent = "Enter Valid Email";
+        e.preventDefault();
+        EmailMsg.textContent = "Enter valid email";
         return false;
+    } else {
+        EmailMsg.textContent = "";
     }
 
-    else
-        EmailMsg.textContent = "";
-
-    //Password
-
+    // Password
     var Password = document.getElementById("password").value;
     var PasswordMsg = document.getElementById("passwordMsg");
 
-    if(Password == ''){
+    if(Password === ''){
         e.preventDefault();
-        PasswordMsg.textContent = "This feild is requried";
+        PasswordMsg.textContent = "This field is required";
         return false;
-    }else if (Password.length < 6){
+    } else if (Password.length < 6){
         e.preventDefault();
-        PasswordMsg.textContent = "Password must be at least 6 character";
+        PasswordMsg.textContent = "Password must be at least 6 characters";
         return false;
+    } else {
+        PasswordMsg.textContent = "";
     }
 
-    else
-        PasswordMsg.textContent = "";
-
+    // Get from localStorage
     var getEmail = localStorage.getItem("email");
     var getPassword = localStorage.getItem("password");
 
-    if(getEmail === null|| getPassword === null){
+    if(getEmail === null || getPassword === null){
         e.preventDefault();
-        alert("No user found! Please sign up first.");
+        errorMsg.textContent = "No user found! Please sign up first.";
+        errorMsg.style.display = "block";
         return false;
     }
 
     if(email === getEmail && Password === getPassword){
-        alert("Login successful!");
         localStorage.setItem("isLoggedIn", true);
-        // window.location.href = "exsam.html";
+        window.location.href = "/Pages/exsam.html";
     } else {
         e.preventDefault();
-        alert("Invalid email or password");
+        errorMsg.textContent = "Invalid email or password.";
+        errorMsg.style.display = "block";
         return false;
     }
 }
-
 
 function validateInput(fieldId){
     var value = document.getElementById(fieldId).value;
