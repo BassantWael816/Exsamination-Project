@@ -26,9 +26,9 @@ function validateForm(e){
         e.preventDefault();
         PasswordMsg.textContent = "This field is required";
         return false;
-    } else if (Password.length < 6){
+    } else if (Password.length < 8){
         e.preventDefault();
-        PasswordMsg.textContent = "Password must be at least 6 characters";
+        PasswordMsg.textContent = "Password must be at least 8 characters";
         return false;
     } else {
         PasswordMsg.textContent = "";
@@ -71,7 +71,7 @@ function validateInput(fieldId){
     else if (fieldId === "password"){
         if (value === "") {
             msgElement.textContent = "This field is required";
-        } else if (value.length < 6) {
+        } else if (value.length < 8) {
             msgElement.textContent = "Password Must Be Long More Than";
         } else 
             msgElement.textContent = "";
