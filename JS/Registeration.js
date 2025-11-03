@@ -24,9 +24,14 @@ function registerUser() {
     password: password
   };
 
-  localStorage.setItem("user", JSON.stringify(user));
-  localStorage.setItem("isRegistered", "true");
 
-  //alert("Registration successful!");
-  window.location.href = "/pages/login.html";
+localStorage.setItem("firstName", firstName);
+localStorage.setItem("lastName", lastName);
+localStorage.setItem("email", email);
+localStorage.setItem("password", password);
+localStorage.setItem("isRegistered", "true");
+
+// alert("Registration successful!");
+window.location.href = "/pages/login.html";
+
 }

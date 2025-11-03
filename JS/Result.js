@@ -3,7 +3,11 @@ window.addEventListener("load", function() {
 
   if (!scoreData) {
     alert("No exam result found. Please complete the exam first.");
+<<<<<<< HEAD
     window.location.href = "/pages/exam.html"; 
+=======
+    window.location.href = "/Pages/exsam.html"; 
+>>>>>>> 9b750f5540552ec464a6da280a8a0c225a847ebf
     return;
   }
 
