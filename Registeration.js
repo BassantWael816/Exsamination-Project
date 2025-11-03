@@ -1,9 +1,3 @@
-window.addEventListener("load", function () {
-  if (localStorage.getItem("isRegistered") === "true") {
-    window.location.href = "login.html";
-  }
-});
-
 function registerUser() {
   var form = document.getElementById("registerForm");
 
