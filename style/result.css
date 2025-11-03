@@ -1,0 +1,94 @@
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  background: linear-gradient(to bottom right, #dbe1f0, #9ba9cf, #6e83b7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+
+.result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  background-color: #ffffffee;
+  padding: 40px 60px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+
+.score {
+  text-align: center;
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 260px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #152C76;
+}
+
+
+.circle {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: conic-gradient(#152C76 0% 0%, #ddd 0% 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+}
+
+.inner-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-circle h3 {
+  font-size: 24px;
+  color: #152C76;
+  margin: 0;
+}
+
+
+.info {
+  text-align: left;
+  margin-top: 15px;
+}
+
+.info p {
+  margin: 5px 0;
+}
+
+
+.message {
+  background-color: #152C76;
+  color: white;
+  border-radius: 25px;
+  padding: 40px 30px;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.message h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
