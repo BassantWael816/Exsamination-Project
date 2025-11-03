@@ -133,10 +133,12 @@ button {
     border: none;
     box-shadow: 0 4px 8px rgba(22, 50, 153, 0.4);
     transition: 0.2s;
+    cursor: pointer;
 }
 
 button:hover {
     background: linear-gradient(to bottom, #1b3692, #152C76);
+    transform: translateY(-3px);
 }
 
 .signup-container {

@@ -1,43 +1,74 @@
 body {
     background: linear-gradient(to bottom right, #dbe1f0, #9ba9cf, #6e83b7);
+    font-family: "Poppins", sans-serif;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    font-family: "Poppins", sans-serif;
-    margin: 0;
 }
 
 .timeout-container {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1000px;
+    height: 560px;
+    background-color: #e8ebf5;
+    border-radius: 12px;
+    box-shadow: 5px 5px 20px rgba(22, 50, 153, 0.3);
+    padding: 40px 60px;
+    overflow: hidden;
+    animation: slide-in 1.2s ease forwards;
 }
 
-.timeout-box {
-    background-color: #e8ebf5;
-    padding: 50px 80px;
-    border-radius: 20px;
-    box-shadow: 0 6px 20px rgba(22, 50, 153, 0.3);
-    border: 2px solid rgba(22, 50, 153, 0.15);
+.image-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timeOut-img {
+    width: 480px;
+    height: auto;
+    animation: float 3s ease-in-out infinite;
+}
+
+.text-side {
+    flex: 1;
+    text-align: center;
+    padding-left: 30px;
+    animation: fade-in 1.5s ease forwards;
 }
 
 .icon {
-    font-size: 60px;
+    font-size: 65px;
     color: #152C76;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    animation: pulse 2s infinite;
 }
 
 h1 {
     color: #152C76;
     font-family: "Montserrat", sans-serif;
-    font-size: 32px;
-    margin-bottom: 10px;
+    font-size: 50px;
+    font-weight: 800;
+    margin: 10px 0;
+    letter-spacing: 2px;
+    animation: fade-up 1.5s ease forwards;
 }
 
 p {
     color: #384b86;
     font-size: 18px;
-    margin-bottom: 30px;
+    margin: 25px 0 45px;
     font-weight: 500;
+}
+
+#student-name {
+    color: #152C76;
+    font-weight: 600;
 }
 
 button {
@@ -53,7 +84,41 @@ button {
     box-shadow: 0 4px 10px rgba(22, 50, 153, 0.3);
 }
 
+button i {
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
 button:hover {
     background-color: #1b3692;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+}
+
+button:hover i {
+    transform: rotate(-10deg) translateX(4px);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+@keyframes slide-in {
+    from { transform: translateY(40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }

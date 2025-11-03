@@ -9,11 +9,19 @@
 </head>
 <body>
     <div class="timeout-container">
-        <div class="timeout-box">
-        <i class="fa-solid fa-hourglass-end icon"></i>
-        <h1>Time’s Up!</h1>
-        <p id="timeout-message">Sorry <span id="student-name">Student</span>, your exam time has expired.</p>
-        <button onclick="window.location.href='/Pages/login.html'">Return to Login</button>
+        <div class="image-side">
+            <img src="/Images/time-out-removebg-preview.png" alt="timeout" class="timeOut-img">
+        </div>
+
+        <div class="text-side fade-in">
+            <i class="fa-solid fa-hourglass-end icon spin"></i>
+            <h1>TIME OUT</h1>
+            <p id="timeout-message">
+                Sorry <span id="student-name">Student</span>, your exam time has expired.
+            </p>
+            <button onclick="window.location.href='/Pages/login.html'">
+                <i class="fa-solid fa-right-to-bracket"></i> Return to Login
+            </button>
         </div>
     </div>
 
