@@ -160,3 +160,41 @@ function updateProgressBar() {
     var progress = ((currentQuestionIndex + 1) / randomQuestions.length) * 100;
     document.getElementById("progress-fill").style.width = `${progress}%`;
 }
+
+//Finish Button
+document.getElementById("submit").onclick = function() {
+    var score = 0;
+    for (var i = 0; i < randomQuestions.length; i++) {
+        var ansIndex = selectedAnswers[i];
+        if (ansIndex !== undefined && randomQuestions[i].answers[ansIndex].isCorrect) score++;
+    }
+    var percentage = Math.round((score / randomQuestions.length) * 100);
+    localStorage.setItem("score", percentage);
+
+    var studentName = localStorage.getItem("firstName");
+    var lastName = localStorage.getItem("lastName") || "";
+    localStorage.setItem("studentName", studentName);
+    localStorage.setItem("lastName", lastName);
+
+    window.location.href = "/Pages/result.html";
+};
+
+// Timer
+var timeLeft = 5* 60;
+var timer = setInterval(function() {
+    var minutes = Math.floor(timeLeft / 60);
+    var seconds = timeLeft % 60;
+    document.getElementById("time-text").textContent = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+    if (timeLeft <= 0) {
+        clearInterval(timer);
+        window.location.href="/Pages/timeOut.html"
+    }
+    timeLeft--;
+}, 1000);
+
+
+// Mark button
+document.getElementById("mark").onclick = function() {
+    var marked = document.querySelectorAll("#mark-list .question-btn")[currentQuestionIndex];
+    marked.classList.add("marked");
+};

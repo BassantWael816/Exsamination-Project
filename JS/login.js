@@ -2,8 +2,7 @@ function validateForm(e){
     var errorMsg = document.getElementById("error-message");
     errorMsg.style.display = "none";
 
-    // Email
-    var email = document.getElementById("email").value;
+    var email = document.getElementById("email").value.trim();
     var EmailMsg = document.getElementById("EmailMsg");
 
     if(email === ""){
@@ -18,8 +17,7 @@ function validateForm(e){
         EmailMsg.textContent = "";
     }
 
-    // Password
-    var Password = document.getElementById("password").value;
+    var Password = document.getElementById("password").value.trim();
     var PasswordMsg = document.getElementById("passwordMsg");
 
     if(Password === ''){
@@ -33,12 +31,13 @@ function validateForm(e){
     } else {
         PasswordMsg.textContent = "";
     }
-
-    // Get from localStorage
+    
     var getEmail = localStorage.getItem("email");
     var getPassword = localStorage.getItem("password");
+    var firstName = localStorage.getItem("firstName");
+    var lastName = localStorage.getItem("lastName");
 
-    if(getEmail === null || getPassword === null){
+    if(!getEmail || !getPassword){
         e.preventDefault();
         errorMsg.textContent = "No user found! Please sign up first.";
         errorMsg.style.display = "block";
@@ -47,6 +46,12 @@ function validateForm(e){
 
     if(email === getEmail && Password === getPassword){
         localStorage.setItem("isLoggedIn", true);
+
+        if(firstName && lastName){
+            localStorage.setItem("firstName", firstName);
+            localStorage.setItem("lastName", lastName);
+        }
+
         window.location.href = "/Pages/exsam.html";
     } else {
         e.preventDefault();
@@ -55,26 +60,3 @@ function validateForm(e){
         return false;
     }
 }
-
-function validateInput(fieldId){
-    var value = document.getElementById(fieldId).value;
-    var msgElement = document.getElementById(fieldId + "Msg");
-
-    if(fieldId === "email"){
-        if(value === ""){
-        EmailMsg.textContent = "This feild is requird";
-    } else if (!email.includes('@') || !email.includes('.')){
-        msgElement.textContent = "Enter a valid email";
-    } else
-        msgElement.textContent = "";
-    }
-    else if (fieldId === "password"){
-        if (value === "") {
-            msgElement.textContent = "This field is required";
-        } else if (value.length < 8) {
-            msgElement.textContent = "Password Must Be Long More Than";
-        } else 
-            msgElement.textContent = "";
-    }
-}
-

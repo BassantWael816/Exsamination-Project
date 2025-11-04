@@ -2,7 +2,6 @@ window.addEventListener("load", function() {
   var scoreData = localStorage.getItem("score");
 
   if (!scoreData) {
-    alert("No exam result found. Please complete the exam first.");
     window.location.href = "/Pages/exsam.html"; 
     return;
   }
@@ -46,16 +45,28 @@ function showResult() {
 }
 
 function animateCircle(score) {
-  var circle = document.querySelector(".circle");
-  var valueDisplay = document.getElementById("scoreValue");
+  const circle = document.querySelector(".circle");
+  const valueDisplay = document.getElementById("scoreValue");
+
+  if (!circle || !valueDisplay) return;
 
   valueDisplay.textContent = score + "%";
 
+  let color;
   if (score >= 85) {
-    circle.style.backgroundColor = "#4CAF50"; 
+    color = "#390d9aff"; 
   } else if (score >= 60) {
-    circle.style.backgroundColor = "#FFA500"; 
+    color = "#FFA500"; 
   } else {
-    circle.style.backgroundColor = "#FF4C4C"; 
+    color = "#FF4C4C";  
+  }
+
+  const angle = (score / 100) * 360;
+
+  circle.style.background = `conic-gradient(${color} ${angle}deg, #ddd ${angle}deg)`;
+
+  const inner = circle.querySelector(".inner-circle h3");
+  if (inner) {
+    inner.style.color = color;
   }
 }

@@ -1,11 +1,8 @@
-var studentFirstName = localStorage.getItem("FirstName");
-var studentLastName = localStorage.getItem("LastName");
+window.addEventListener("load", function() {
+    var studentFirstName = localStorage.getItem("firstName");
+    var studentLastName = localStorage.getItem("lastName");
 
-    if (studentFirstName && studentLastName) {
-        document.getElementById("student-name").textContent = `${studentFirstName} ${studentLastName}`;
+if (studentFirstName && studentLastName) {
+    document.getElementById("student-name").textContent = `${studentFirstName} ${studentLastName}`;
     }
-
-    //Clear exam/session data
-    // localStorage.removeItem("examStatus");
-    // localStorage.removeItem("examStartTime");
-    // localStorage.removeItem("examAnswers");
+});
