@@ -9,18 +9,24 @@ body {
   margin: 0;
 }
 
-
 .result {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 40px;
   background-color: #ffffffee;
-  padding: 40px 60px;
+  height: 500px;
+  width: 900px;
+  padding: 40px 0px;
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  animation: float 4s ease-in-out infinite; /* ← تمت الإضافة هنا */
 }
 
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
 
 .score {
   text-align: center;
@@ -35,7 +41,6 @@ h2 {
   margin-bottom: 20px;
   color: #152C76;
 }
-
 
 .circle {
   width: 130px;
@@ -64,7 +69,6 @@ h2 {
   margin: 0;
 }
 
-
 .info {
   text-align: left;
   margin-top: 15px;
@@ -74,9 +78,13 @@ h2 {
   margin: 5px 0;
 }
 
-
 .message {
+  position: relative;
   background-color: #152C76;
+  background-image: url("/Images/Vector\ student\ exam\ preparation\ flat\ illustration\ _\ Premium\ AI-generated\ vector.jpeg");
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
   color: white;
   border-radius: 25px;
   padding: 40px 30px;
@@ -86,9 +94,7 @@ h2 {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  overflow: hidden;
 }
 
-.message h3 {
-  font-size: 22px;
-  margin-bottom: 15px;
-}
+

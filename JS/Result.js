@@ -1,18 +1,23 @@
+
 window.addEventListener("load", function() {
   var scoreData = localStorage.getItem("score");
 
   if (!scoreData) {
-    window.location.href = "/Pages/exsam.html"; 
+    alert("No exam result found. Please complete the exam first.");
+    window.location.href = "exam.html"; 
     return;
   }
 
+ 
   showResult();
 });
 
 function showResult() {
-  var firstName = localStorage.getItem("studentName") || "";
-  var lastName = localStorage.getItem("lastName") || "";
-  var score = parseInt(localStorage.getItem("score")) || 0;
+  var firstName = localStorage.getItem("firstName");
+  var lastName = localStorage.getItem("lastName");
+  var score = localStorage.getItem("score");
+
+  score = parseInt(score);
 
   var performance;
   var status;
@@ -39,32 +44,30 @@ function showResult() {
   document.getElementById("status").textContent = status;
   document.getElementById("rank").textContent = rank;
 
+  
   animateCircle(score);
 }
-
 function animateCircle(score) {
-  const circle = document.querySelector(".circle");
-  const valueDisplay = document.getElementById("scoreValue");
+  var circle = document.querySelector(".circle");
+  var scoreValue = document.getElementById("scoreValue");
 
-  if (!circle || !valueDisplay) return;
+  var current = 0;
+  var target = Math.min(score, 100); 
+  var interval = setInterval(function() {
+    if (current >= target) {
+      clearInterval(interval);
+    } else {
+      current++;
+      scoreValue.textContent = current + "%";
 
-  valueDisplay.textContent = score + "%";
-
-  let color;
-  if (score >= 85) {
-    color = "#390d9aff"; 
-  } else if (score >= 60) {
-    color = "#FFA500"; 
-  } else {
-    color = "#FF4C4C";  
-  }
-
-  const angle = (score / 100) * 360;
-
-  circle.style.background = `conic-gradient(${color} ${angle}deg, #ddd ${angle}deg)`;
-
-  const inner = circle.querySelector(".inner-circle h3");
-  if (inner) {
-    inner.style.color = color;
-  }
+      
+      var color;
+      if (current >= 85) color = "#152C76";     
+      else if (current >= 60) color = "green";
+      else color = "red";                    
+      circle.style.background = 
+        "conic-gradient(" + color + " " + current + "%, #ddd " + current + "% 100%)";
+    }
+  }, 20);
 }
+
