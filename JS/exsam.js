@@ -196,3 +196,16 @@ document.getElementById("mark").onclick = function() {
     var marked = document.querySelectorAll("#mark-list .question-btn")[currentQuestionIndex];
     marked.classList.add("marked");
 };
+
+// click on question on mark list and display it in exsam 
+var questionButtons = document.querySelectorAll("#mark-list .question-btn");
+questionButtons.forEach(function(button, index) {
+    button.addEventListener("click", function() {
+        currentQuestionIndex = index; 
+        showQuestion(currentQuestionIndex);
+        updateProgressBar();
+    
+        questionButtons.forEach(btn => btn.classList.remove("active"));
+        this.classList.add("active");
+    });
+});
