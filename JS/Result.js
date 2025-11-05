@@ -2,7 +2,6 @@ window.addEventListener("load", function() {
   var scoreData = localStorage.getItem("score");
 
   if (!scoreData) {
-    alert("No exam result found. Please complete the exam first.");
     window.location.href = "/Pages/exsam.html"; 
     return;
   }
@@ -36,5 +35,36 @@ function showResult() {
   else rank = "D";
 
   document.getElementById("studentName").textContent = firstName + " " + lastName;
-  document.get
+  document.getElementById("performance").textContent = performance;
+  document.getElementById("status").textContent = status;
+  document.getElementById("rank").textContent = rank;
+
+  animateCircle(score);
+}
+
+function animateCircle(score) {
+  const circle = document.querySelector(".circle");
+  const valueDisplay = document.getElementById("scoreValue");
+
+  if (!circle || !valueDisplay) return;
+
+  valueDisplay.textContent = score + "%";
+
+  let color;
+  if (score >= 85) {
+    color = "#390d9aff"; 
+  } else if (score >= 60) {
+    color = "#FFA500"; 
+  } else {
+    color = "#FF4C4C";  
+  }
+
+  const angle = (score / 100) * 360;
+
+  circle.style.background = `conic-gradient(${color} ${angle}deg, #ddd ${angle}deg)`;
+
+  const inner = circle.querySelector(".inner-circle h3");
+  if (inner) {
+    inner.style.color = color;
+  }
 }

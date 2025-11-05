@@ -11,8 +11,7 @@
     
     <section class="form">
         
-        <form id="registerForm" onsubmit="registerUser(); return false;">
-
+        <form id="registerForm" onsubmit="registerUser(event); return false;">
             <div>
                 <label for="one">First Name : </label>
             <input class="field" id="one" type="text" name="firstName" placeholder="Enter Your First Name" pattern="[A-Za-z]+" title="Please enter letters only" required>
