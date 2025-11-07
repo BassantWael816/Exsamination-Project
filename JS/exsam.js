@@ -182,7 +182,7 @@ document.getElementById("submit").onclick = function() {
 };
 
 // Timer
-var timeLeft = .1* 60;
+var timeLeft = 2* 60;
 var timer = setInterval(function() {
     var minutes = Math.floor(timeLeft / 60);
     var seconds = timeLeft % 60;
