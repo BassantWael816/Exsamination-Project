@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom right, #dbe1f0, #9ba9cf, #6e83b7);
+    position: relative;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+}
+
+body.show {
+    opacity: 1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(21, 44, 118, 0.05); 
+}
+
+.content {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.title {
+    font-size: 50px;
+    color: #152C76;
+    font-weight: 800;
+    margin-bottom: 8px;
+    text-shadow: 0px 3px 10px rgba(0,0,0,0.15);
+}
+
+.subtitle {
+    font-size: 20px;
+    font-weight: 300;
+    color: #152C76;
+}
+
+.buttons {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    }
+
+.btn {
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.login-btn {
+    background: #152C76;
+    color: white;
+    box-shadow: 0 8px 16px rgba(21, 44, 118, 0.35);
+}
+
+.login-btn:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 20px rgba(21, 44, 118, 0.55);
+}
+
+.register-btn {
+    background: white;
+    color: #152C76;
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.35);
+}
+
+.register-btn:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 20px rgba(255, 255, 255, 0.55);
+}
+
+.shapes span {
+    position: absolute;
+    display: block;
+    width: 65px;
+    height: 65px;
+    background: #152C76;
+    opacity: 0.22;
+    border-radius: 14px;
+    animation: float 7s infinite ease-in-out;
+}
+
+.shapes span:nth-child(1) { top: 12%; left: 15%; animation-delay: 0s; }
+.shapes span:nth-child(2) { top: 75%; left: 8%; animation-delay: 1s; }
+.shapes span:nth-child(3) { top: 18%; right: 12%; animation-delay: 2s; }
+.shapes span:nth-child(4) { bottom: 18%; right: 16%; animation-delay: 3s; }
+.shapes span:nth-child(5) { bottom: 40%; left: 45%; animation-delay: 4s; }
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-25px) rotate(10deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}

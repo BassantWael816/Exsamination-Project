@@ -2,6 +2,7 @@ Overview
 This project is an Examination Website that allows users to register, log in, take a timed exam, mark questions for review, navigate between questions, and finally receive a performance result.
 
 The website includes:
+  welcome page.
   Login Page.
   Registration Page.
   Exam Page (Questions + Timer + Navigation + Marking System).
@@ -25,6 +26,16 @@ Features
     Password mismatch.
     User already exists.
     User not found.
+
+  Welcome Page:
+  A stylish introductory page with:
+  - Full-screen gradient background  
+  - Floating animated shapes  
+  - Two main buttons:
+    - **Login**
+    - **Register**
+  - No logic inside this page (styling only)
+  - This is the first page users should open.   
 
  Exam Page:
     Randomized questions every time the exam starts.
@@ -64,6 +75,7 @@ Timeout Page:
 
 Project Structure:
 /Pages
+   ├── welcome.html
    ├── login.html
    ├── RegistrationForm.html
    ├── exsam.html
@@ -77,6 +89,7 @@ Project Structure:
    └── Result.js
 
 /style
+   ├── welcome.css
    ├── login.css
    ├── register.css
    ├── exam.css
@@ -89,10 +102,12 @@ Project Structure:
    └── other images...
 
 
+
 How to Run the Project:
   Download or clone the repository
   Open the project folder
-  Start the website by opening: /Pages/login.html
+  Start the website by opening: /Pages/welcome.html
+  From Welcome Page Choose: Login, orRegister
   (Optional) Modify the exam timer from: exsam.js → var timeLeft = 2 * 60; 
 
 Technologies Used:
