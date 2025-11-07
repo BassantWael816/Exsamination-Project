@@ -12,9 +12,9 @@ var questions = [
         text:"Which of the following is correct about JavaScript?",
         answers:[
             {text:"a) JavaScript is an Object-Based language",isCorrect:true},
-            {text:"b) JavaScript is Assembly-language",isCorrect:false},
+            {text:"b) JavaScript is an Object-Orinted language",isCorrect:false},
             {text:"c) JavaScript is Assembly-language",isCorrect:false},
-            {text:"d) JavaScript is Assembly-language",isCorrect:false},
+            {text:"d) JavaScript is Hyper Text Markup language",isCorrect:false},
         ]
     },
     {
@@ -23,7 +23,7 @@ var questions = [
             {text:"a) It is an ordered list of values",isCorrect:true},
             {text:"b) It is an ordered list of objects",isCorrect:false},
             {text:"c) It is an ordered list of string",isCorrect:false},
-            {text:"c) It is an ordered list of string",isCorrect:false},
+            {text:"c) It is an ordered list of characters",isCorrect:false},
         ]
     },
     {
@@ -48,7 +48,7 @@ var questions = [
         text:"Which of the following is used to read an HTML page and render it?",
         answers:[
             {text:"a) Web server",isCorrect:false},
-            {text:"a) Web server",isCorrect:false},
+            {text:"a) Web window",isCorrect:false},
             {text:"c) Web browser",isCorrect:true},
             {text:"d) Web matrix",isCorrect:false},
         ]
@@ -123,9 +123,13 @@ function showQuestion(index) {
             selectedAnswers[index] = i; 
             document.querySelectorAll(".option").forEach(o => o.classList.remove("selected"));
             button.classList.add("selected");
-
-            var ansButton = document.querySelectorAll("#mark-list .question-btn");
-            ansButton[index].classList.add("answered");
+            
+            var qButton = document.querySelectorAll("#mark-list .question-btn")[index];
+            
+            qButton.classList.add("answered");
+            
+            qButton.classList.remove("marked");
+            
         });
 
         answersContainer.appendChild(button);
@@ -178,7 +182,7 @@ document.getElementById("submit").onclick = function() {
 };
 
 // Timer
-var timeLeft = 5* 60;
+var timeLeft = .1* 60;
 var timer = setInterval(function() {
     var minutes = Math.floor(timeLeft / 60);
     var seconds = timeLeft % 60;
@@ -194,7 +198,9 @@ var timer = setInterval(function() {
 // Mark button
 document.getElementById("mark").onclick = function() {
     var marked = document.querySelectorAll("#mark-list .question-btn")[currentQuestionIndex];
-    marked.classList.add("marked");
+    if (!marked.classList.contains("answered")) { 
+        marked.classList.add("marked");
+    }
 };
 
 // click on question on mark list and display it in exsam 
@@ -205,7 +211,14 @@ questionButtons.forEach(function(button, index) {
         showQuestion(currentQuestionIndex);
         updateProgressBar();
     
-        questionButtons.forEach(btn => btn.classList.remove("active"));
-        this.classList.add("active");
+        questionButtons.forEach(btn => {
+            if (!btn.classList.contains("answered") && !btn.classList.contains("marked")) {
+                btn.classList.remove("active");
+            }
+        });
+
+        if (!this.classList.contains("answered") && !this.classList.contains("marked")) {
+            this.classList.add("active");
+        }
     });
 });
