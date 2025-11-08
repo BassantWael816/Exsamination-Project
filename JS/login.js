@@ -65,6 +65,13 @@ function validateForm(e) {
     localStorage.setItem("firstName", userByEmail.firstName);
     localStorage.setItem("lastName", userByEmail.lastName);
 
+    localStorage.setItem("loggedUser", JSON.stringify(userByEmail));
+
+    localStorage.removeItem("score");
+    localStorage.removeItem("currentQuestion");
+    localStorage.removeItem("questions");
+
+
     window.location.href = "/Pages/exsam.html";
     return true;
 }

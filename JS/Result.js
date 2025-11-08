@@ -4,20 +4,27 @@ window.addEventListener("load", function() {
 
   if (!scoreData) {
     alert("No exam result found. Please complete the exam first.");
-    window.location.href = "exam.html"; 
+    window.location.href = "/Pages/exsam.html"; 
     return;
   }
 
- 
+
   showResult();
 });
 
 function showResult() {
-  var firstName = localStorage.getItem("firstName");
-  var lastName = localStorage.getItem("lastName");
-  var score = localStorage.getItem("score");
 
-  score = parseInt(score);
+  var user = JSON.parse(localStorage.getItem("loggedUser"));
+
+  if (!user) {
+    alert("Please login first.");
+    window.location.href = "/Pages/login.html";
+    return;
+  }
+
+  var firstName = user.firstName;
+  var lastName = user.lastName;
+  var score = parseInt(localStorage.getItem("score"));
 
   var performance;
   var status;

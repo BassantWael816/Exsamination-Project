@@ -1,8 +1,7 @@
 window.addEventListener("load", function() {
-    var studentFirstName = localStorage.getItem("firstName");
-    var studentLastName = localStorage.getItem("lastName");
+    var user = JSON.parse(localStorage.getItem("loggedUser"));
 
-if (studentFirstName && studentLastName) {
-    document.getElementById("student-name").textContent = `${studentFirstName} ${studentLastName}`;
+    if (user) {
+        document.getElementById("student-name").textContent = user.firstName + " " + user.lastName;
     }
 });

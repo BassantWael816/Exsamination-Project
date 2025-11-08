@@ -34,5 +34,16 @@ function registerUser(e) {
 
   localStorage.setItem("users", JSON.stringify(users));
 
+  localStorage.setItem("loggedUser", JSON.stringify({
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      password: password
+  }));
+
+  localStorage.removeItem("score");
+  localStorage.removeItem("currentQuestion");
+  localStorage.removeItem("questions");
+
   window.location.href = "/Pages/exsam.html";
 }
